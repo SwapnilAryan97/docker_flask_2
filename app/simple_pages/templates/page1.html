@@ -1,40 +1,213 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Git</h1>
-    <p>Git is a free and open source distributed version control system designed to handle everything from small to very
-        large projects with speed and efficiency.</p>
-    <p>Git is a software for tracking changes in any set of files, usually used for coordinating work among
-        programmers collaboratively developing source code during software development. Its goals include speed, data
-        integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on
-        different systems).</p>
+    <div class="container">
+        <h1><b>Git</b></h1>
+        <p>Git is a free and open source distributed version control system designed to handle everything from small to
+            very
+            large projects with speed and efficiency.</p>
+        <p>Git is a software for tracking changes in any set of files, usually used for coordinating work among
+            programmers collaboratively developing source code during software development. Its goals include speed,
+            data
+            integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on
+            different systems).</p>
 
 
-    <h4>Branches</h4>
-    <p>Branching means you diverge from the main line of development and continue to do work without messing with that
-        main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of
-        your source code directory, which can take a long time for large projects.
-        <br>The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and
-        switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages
-        workflows that branch and merge often, even multiple times in a day.
-        <br><br> Suppose you’ve decided that you’re going to work on issue #53 in whatever issue-tracking system your
-        company uses.
-        To create a new branch and switch to it at the same time, you can run the git checkout command with the -b
-        switch
-    <div class="line-numbers">
-    <pre><code class="python-css">$ git checkout -b iss53</code></pre>
-    </div>
-    To go back to the main branch you use:
-    <div class="line-numbers">
+        <h4><b>Branches</b></h4>
+        <p>Branching means you diverge from the main line of development and continue to do work without messing with
+            that
+            main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy
+            of
+            your source code directory, which can take a long time for large projects.
+            <br>The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and
+            switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages
+            workflows that branch and merge often, even multiple times in a day.
+            <br><br> Suppose you’ve decided that you’re going to work on issue #53 in whatever issue-tracking system
+            your
+            company uses.
+            To create a new branch and switch to it at the same time, you can run the git checkout command with the -b
+            switch:
+        <div class="line-numbers">
+            <pre><code class="python-css">$ git checkout -b iss53</code></pre>
+        </div>
+        To go back to the main branch you use:
+        <div class="line-numbers">
     <pre>
-        <code class="python-css">$ git checkout -b master</code>
-    </pre>
+        <code>$ git checkout -b master</code></pre>
+        </div>
+        </p>
+
+
+        <h4><b>Merge</b></h4>
+        <p>
+            Git merging combines sequences of commits into one unified history of commits. There are two main ways Git
+            will
+            merge: Fast Forward and Three way. Git can automatically merge commits unless there are changes that
+            conflict in
+            both commit sequences.<br>
+            Suppose you’ve decided that your issue #53 work is complete and ready to be merged into your master branch.
+            In
+            order to do that, you’ll merge your iss53 branch into master.<br>
+            All you have to do is check out the branch you wish to merge into and then run the git merge command:
+
+        <div class="line-numbers">
+    <pre><code class="python-css">$ git checkout master
+Switched to branch 'master'
+$ git merge iss53
+Merge made by the 'recursive' strategy.
+index.html |    1 +
+1 file changed, 1 insertion(+)</code></pre>
+        </div>
+        </p>
+
+        <h4><b>Commits</b></h4>
+        <p>
+            The git commit command captures a snapshot of the project's currently staged changes. Committed snapshots
+            can be
+            thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to.
+            Prior to the execution of git commit, The git add command is used to promote or 'stage' changes to the
+            project
+            that will be stored in a commit. These two commands git commit and git add are two of the most frequently
+            used.
+        </p>
+        <p>
+            The commit command is followed by a message in quotes mentioning the changes done in the following commit by
+            using the -m command.
+        <pre>
+        <code>$ git commit -m "fixed bad email address" </code></pre>
     </div>
     </p>
 
 
-    <h4>Merge</h4>
+    <h4><b>Tags</b></h4>
     <p>
+        Tagging is generally used to capture a point in history that is used for a marked version release (i.e.
+        v1.0.1).
+        A tag is like a branch that doesn’t change. Unlike branches, tags, after being created, have no further
+        history
+        of commits.
+    <div>
+        <ul>
+            <li>
+                <b>Creating a tag</b><br>
+                To create a new tag execute the following command:
+                <pre><code>$ git tag <span> <</span>tagname<span>> </span> </code></pre>
+                <p>
+                    Replace < tagname > with a semantic identifier to the state of the repo at the time the tag is
+                    being created. A common pattern is to use version numbers like git tag v1.4. Git supports two
+                    different types of tags, annotated and lightweight tags. The previous example created a
+                    lightweight tag. Lightweight tags and Annotated tags differ in the amount of accompanying meta
+                    data they store.<br> A best practice is to consider Annotated tags as public, and Lightweight tags
+                    as private. Annotated tags store extra meta data such as: the tagger name, email, and date. This
+                    is important data for a public release. Lightweight tags are essentially 'bookmarks' to a
+                    commit, they are just a name and a pointer to a commit, useful for creating quick links to
+                    relevant commits.
+                </p>
+            </li>
+            <li>
+                <b>Annotated Tags</b>
+                <p>
+                    Annotated tags are stored as full objects in the Git database. To reiterate, They store extra
+                    meta data such as: the tagger name, email, and date. Similar to commits and commit messages
+                    Annotated tags have a tagging message. Additionally, for security, annotated tags can be signed
+                    and verified with GNU Privacy Guard (GPG). Suggested best practices for git tagging is to prefer
+                    annotated tags over lightweight so you can have all the associated meta-data.
+                <pre><code>$ git tag -a v1.4</code></pre>
+                </p>
 
+                <p>
+                    Executing this command will create a new annotated tag identified with v1.4. The command will
+                    then open up the configured default text editor to prompt for further meta data input.
+                <pre><code>$ git tag -a v1.4 -m "my version 1.4"</code></pre>
+                Executing this command is similar to the previous invocation, however, this version of the command
+                is passed the -m option and a message. This is a convenience method similar to git commit -m that
+                will immediately create a new tag and forgo opening the local text editor in favor of saving the
+                message passed in with the -m option.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <h4><b>Repository</b></h4>
+    <p>
+        Repositories in GIT contain a collection of files of various different versions of a Project. These files
+        are imported from the repository into the local server of the user for further updations and modifications
+        in the content of the file. A VCS or the Version Control System is used to create these versions and store
+        them in a specific place termed as a repository. The process of copying the content from an existing Git
+        Repository with the help of various Git Tools is termed as cloning. Once the cloning process is done, the
+        user gets the complete repository on his local machine. Git by default assumes the work to be done on the
+        repository is as a user, once the cloning is done.<br>
+        Users can also create a new repository or delete an existing repository. To delete a repository, the simpler
+        way is to just delete the folder containing the repository.
     </p>
+    <p>
+    <h6><b>Adding to a Repository</b></h6>
+    After performing various modifications on a file in the Working Area, GIT needs to follow two more steps to save
+    these changes in the local repository.
+    These steps are:
+    <ol>
+        <li>
+            Adding the changes to the Index(Staging Area)
+        </li>
+        <li>
+            Committing the indexed changes into the repository
+        </li>
+    </ol>
+
+    <h6><b>Adding changes to the Index</b></h6>
+    This process is done by the use of <b>git add</b> command. When the changes have been made in the Working Tree/Area.
+    These
+    changes need to be added to the Staging Area for further modification of the file. <b>git add</b> command adds the
+    file in
+    the local repository. This stages them for the commit process.<br><br>
+
+    To add a specific list of files to staging area.
+    <pre><code>$ git add --all</code></pre>
+    To add all files of current directory to staging area.
+    <pre><code>$ git add *.txt</code></pre>
+    To add all text files of the current directory to staging area.
+    <pre><code>$ git add docs/*.txt</code></pre>
+    </p><br>
+
+    <h6><b>Synchronizing with Remote Repositories</b></h6>
+    <p>
+        Git allows the users to perform operations on the Repositories by cloning them on the local machine. This will
+        result in the creation of various different copies of the project. These copies are stored on the local machine
+        and hence, the users will not be able to sync their changes with other developers. To overcome this problem, Git
+        allows performing syncing of these local repositories with the remote repositories.
+        This synchronization can be done by the use of two commands in the Git. These commands are:
+    <ul>
+        <li>
+            push
+        </li>
+        <li>
+            pull
+        </li>
+    </ul>
+    <b>Push:</b> This command is used to push all the commits of the current repository to the tracked remote
+    repository. This
+    command can be used to push your repository to multiple repositories at once.
+    <br>
+    <b>Syntax</b>
+    <br>
+    <pre><code>$ git push -u origin master</code></pre>
+
+    To push all the contents of our local repository that belong to the master branch to the server(Global repository).
+    <br>
+    <br>
+    <b>Pull:</b> Pull command is used to fetch the commits from a remote repository and stores them in the remote
+    branches. There might be a case when other users perform changes on their copy of repositories and upload them with
+    other remote repositories. But in that case, your copy of the repository will become out of date. Hence, to
+    re-synchronize your copy of the repository with the remote repository, the user has to just use the <b>git pull</b> command
+    to fetch the content of the remote repository.
+    <br>
+    <b>Syntax</b>
+    <br>
+    <pre><code>$ git pull</code></pre>
+    </p>
+
+
+
+
+    </div>
 
 {% endblock %}

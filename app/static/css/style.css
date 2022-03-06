@@ -1,14 +1,17 @@
 body {
-font-size: 100%;
+    font-size: 100%;
 }
 
-.slate-grey{
+.slate-grey {
     color: slategrey;
 }
 
 pre code {
-  background-color: #eee;
-  border: 1px solid #999;
-  display: block;
-  padding: 5px;
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 5px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    /*margin-right: 900px;*/
 }
