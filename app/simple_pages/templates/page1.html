@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 >Git</h1>
+    <h1>Git</h1>
     <p>Git is a free and open source distributed version control system designed to handle everything from small to very
         large projects with speed and efficiency.</p>
     <p>Git is a software for tracking changes in any set of files, usually used for coordinating work among
@@ -8,6 +8,33 @@
         integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on
         different systems).</p>
 
-    <h1
+
+    <h4>Branches</h4>
+    <p>Branching means you diverge from the main line of development and continue to do work without messing with that
+        main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of
+        your source code directory, which can take a long time for large projects.
+        <br>The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and
+        switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages
+        workflows that branch and merge often, even multiple times in a day.
+        <br><br> Suppose you’ve decided that you’re going to work on issue #53 in whatever issue-tracking system your
+        company uses.
+        To create a new branch and switch to it at the same time, you can run the git checkout command with the -b
+        switch
+    <div class="line-numbers">
+    <pre><code class="python-css">$ git checkout -b iss53</code></pre>
+    </div>
+    To go back to the main branch you use:
+    <div class="line-numbers">
+    <pre>
+        <code class="python-css">$ git checkout -b master</code>
+    </pre>
+    </div>
+    </p>
+
+
+    <h4>Merge</h4>
+    <p>
+
+    </p>
 
 {% endblock %}
