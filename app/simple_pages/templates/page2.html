@@ -1,4 +1,114 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 2
+
+    <h1><b>Docker</b></h1>
+    <p>
+        Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in
+        packages called containers. The service has both free and premium tiers. The software that hosts the containers
+        is called Docker Engine.
+    </p>
+    <p>
+        Docker can package an application and its dependencies in a virtual container that can run on any Linux,
+        Windows, or macOS computer. This enables the application to run in a variety of locations, such as on-premises,
+        in public or private cloud. When running on Linux, Docker uses the resource isolation features of the Linux
+        kernel (such as cgroups and kernel namespaces) and a union-capable file system (such as OverlayFS) to allow
+        containers to run within a single Linux instance, avoiding the overhead of starting and maintaining virtual
+        machines. Docker on macOS uses a Linux virtual machine to run the containers.<br>
+        Because Docker containers are lightweight, a single server or virtual machine can run several containers
+        simultaneously.
+    </p>
+    <p>
+        The Linux kernel's support for namespaces mostly isolates an application's view of the operating
+        environment, including process trees, network, user IDs and mounted file systems, while the kernel's cgroups
+        provide resource limiting for memory and CPU.
+    </p>
+    <p>
+        Docker implements a high-level API to provide lightweight containers that run processes in isolation. Docker
+        containers are standard processes, so it is possible to use kernel features to monitor their execution --
+        including for example the use of tools like strace to observe and intercede with system calls
+    </p>
+
+    <h4>Containers</h4>
+    <p>
+        A container is a standard unit of software that packages up code and all its dependencies so the application
+        runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight,
+        standalone, executable package of software that includes everything needed to run an application: code, runtime,
+        system tools, system libraries and settings.
+    </p>
+    <p>
+        Container images become containers at runtime and in the case of Docker containers - images become containers
+        when they run on Docker Engine. Available for both Linux and Windows-based applications, containerized software
+        will always run the same, regardless of the infrastructure. Containers isolate software from its environment and
+        ensure that it works uniformly despite differences for instance between development and staging.
+    </p>
+
+    <h4>Images</h4>
+    <p>
+        A Docker image is a read-only template that contains a set of instructions for creating a container that can run
+        on the Docker platform. It provides a convenient way to package up applications and preconfigured server
+        environments, which you can use for your own private use or share publicly with other Docker users. Docker
+        images are also the starting point for anyone using Docker for the first time.
+    </p>
+    <h6><b>Anatomy of a Docker Image</b></h6>
+    <p>
+        A Docker image is made up of a collection of files that bundle together all the essentials – such as
+        installations, application code, and dependencies – required to configure a fully operational container
+        environment. You can create a Docker image by using one of two methods:
+    <ul>
+        <li>
+            <b>Interactive:</b> By running a container from an existing Docker image, manually changing that container
+            environment through a series of live steps, and saving the resulting state as a new image.
+        </li>
+        <li>
+            <b>Dockerfile:</b> By constructing a plain-text file, known as a Dockerfile, which provides the
+            specifications for
+            creating a Docker image.
+        </li>
+    </ul>
+    </p>
+
+    <h4>Tools</h4>
+    <p>
+    <ul>
+        <li>
+            <b>Docker Compose</b> is a tool for defining and running multi-container Docker applications. It uses YAML
+            files to configure the application's services and performs the creation and start-up process of all the
+            containers with a single command. <br>The <b>docker-compose</b> CLI utility allows users to run commands on
+            multiple
+            containers at once, for example, building images, scaling containers, running containers that were stopped,
+            and more. Commands related to image manipulation, or user-interactive options, are not relevant in
+            Docker Compose because they address one container.<br>The <b>docker-compose.yml</b> file is used to define
+            an
+            application's services and includes various configuration options. For example, the build option defines
+            configuration options such as the Dockerfile path, the command option allows one to override default Docker
+            commands, and more.
+        </li>
+        <li>
+            <b>Docker Swarm </b>provides native clustering functionality for Docker containers, which turns a group of
+            Docker
+            engines into a single virtual Docker engine. In Docker 1.12 and higher, Swarm mode is integrated with
+            Docker Engine. The <b>docker swarm CLI</b> utility allows users to run Swarm containers, create discovery
+            tokens, list nodes in the cluster, and more.
+        </li>
+        <li>
+            <b>Docker Volume</b> facilitates the independent persistence of data, allowing data to remain even after the
+            container is deleted or re-created.
+        </li>
+    </ul>
+    </p>
+
+    <h4>Docker Commands</h4>
+    <p>
+
+    </p>
+
+    <h4>How to start the docker project</h4>
+    <p>
+
+    </p>
+
+
+    <h4>Project Repository</h4>
+    <a href="https://hub.docker.com/repository/docker/swapnilsinha/docker_flask_app">Swapnil's Docker Repository</a>
+
 {% endblock %}

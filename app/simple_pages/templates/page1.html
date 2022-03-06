@@ -22,8 +22,7 @@
             switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages
             workflows that branch and merge often, even multiple times in a day.
             <br><br> Suppose you’ve decided that you’re going to work on issue #53 in whatever issue-tracking system
-            your
-            company uses.
+            your company uses.
             To create a new branch and switch to it at the same time, you can run the git checkout command with the -b
             switch:
         <div class="line-numbers">
@@ -35,7 +34,6 @@
         <code>$ git checkout -b master</code></pre>
         </div>
         </p>
-
 
         <h4><b>Merge</b></h4>
         <p>
@@ -78,7 +76,7 @@ index.html |    1 +
     </p>
 
 
-    <h4><b>Tags</b></h4>
+    <h4>Tags</h4>
     <p>
         Tagging is generally used to capture a point in history that is used for a marked version release (i.e.
         v1.0.1).
@@ -127,7 +125,7 @@ index.html |    1 +
         </ul>
     </div>
 
-    <h4><b>Repository</b></h4>
+    <h4>Repository</h4>
     <p>
         Repositories in GIT contain a collection of files of various different versions of a Project. These files
         are imported from the repository into the local server of the user for further updations and modifications
@@ -140,7 +138,7 @@ index.html |    1 +
         way is to just delete the folder containing the repository.
     </p>
     <p>
-    <h6><b>Adding to a Repository</b></h6>
+    <h6>Adding to a Repository</h6>
     After performing various modifications on a file in the Working Area, GIT needs to follow two more steps to save
     these changes in the local repository.
     These steps are:
@@ -153,7 +151,7 @@ index.html |    1 +
         </li>
     </ol>
 
-    <h6><b>Adding changes to the Index</b></h6>
+    <h6>Adding changes to the Index</h6>
     This process is done by the use of <b>git add</b> command. When the changes have been made in the Working Tree/Area.
     These
     changes need to be added to the Staging Area for further modification of the file. <b>git add</b> command adds the
@@ -168,7 +166,7 @@ index.html |    1 +
     <pre><code>$ git add docs/*.txt</code></pre>
     </p><br>
 
-    <h6><b>Synchronizing with Remote Repositories</b></h6>
+    <h6>Synchronizing with Remote Repositories</h6>
     <p>
         Git allows the users to perform operations on the Repositories by cloning them on the local machine. This will
         result in the creation of various different copies of the project. These copies are stored on the local machine
@@ -197,7 +195,8 @@ index.html |    1 +
     <b>Pull:</b> Pull command is used to fetch the commits from a remote repository and stores them in the remote
     branches. There might be a case when other users perform changes on their copy of repositories and upload them with
     other remote repositories. But in that case, your copy of the repository will become out of date. Hence, to
-    re-synchronize your copy of the repository with the remote repository, the user has to just use the <b>git pull</b> command
+    re-synchronize your copy of the repository with the remote repository, the user has to just use the <b>git pull</b>
+    command
     to fetch the content of the remote repository.
     <br>
     <b>Syntax</b>
