@@ -27,3 +27,8 @@ h6{
 h1{
     font-weight: bold;
 }
+
+li{
+    line-height: 25px;
+}
+
