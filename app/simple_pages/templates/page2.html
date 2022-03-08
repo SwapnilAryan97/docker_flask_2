@@ -102,7 +102,7 @@
 
     </p>
 
-    <h4>How to start the docker project</h4>
+    <h4>How to start the docker project using terminal</h4>
     <p>
     <ol>
         <li>
@@ -113,7 +113,7 @@
             <pre><code>$ docker compose up --build</code></pre>
         </li>
         <li>You will see the container build, which should look something like this:
-            <pre><code>(base) swapnilsinha@Swapnils-MacBook-Pro docker_flask % docker compose up --build
+            <pre><code>(base) swapnilsinha@Swapnils-MacBook-Pro docker_flask_2% docker compose up --build
 [+] Building 1.8s (11/11) FINISHED
  => [internal] load build definition from Dockerfile                       0.1s
  => => transferring dockerfile: 32B                                        0.0s
@@ -149,10 +149,59 @@ docker_flask-flask-1  |  * Debugger PIN: 581-910-567
 </code></pre>
 
         </li>
-        <li>Open your browser and type "localhost", and you should see your web application hosted on the
+        <li>
+            Open your browser and type "localhost", and you should see your web application hosted on your local
+            machine.
+        </li>
+        <li>
+            Login to heroku on your web browser, open your app container and click on open app then you can see your web
+            app hosted on the heroku server.
+        </li>
+    </ol>
+    <h4>Other Docker commands</h4>
+    <ol>
+        <li>
+            To view all docker containers on your machine, run:
+            <pre><code>$ docker ps</code></pre>
+            Where ps stands for Process Status<br><br>
+        </li>
+        <li>
+            If you want to start docker on a specific port on your machine, run:
+            <pre><code>$ docker run -dp 80:80 docker/docker_flask_2</code></pre>
+            You’ll notice a few flags being used. Here’s some more info on them:
+            <ul>
+                <li>-d <- run the container in detached mode (in the background)</li>
+                <li>-p 80:80 <- map port 80 of the host to port 80 in the container</li>
+                <li>docker/getting-started <- the image to use</li>
+            </ul>
+        </li>
+        <li>
+            To build an updated version of the image:
+            <pre><code>$ docker build -t  .</code></pre>
+            <ul>
+                <li>the -t flag tags our image.</li>
+            </ul>
+        <li>
+            To start a new container,
+            <pre><code>$ docker run -dp 3000:3000 docker_flask_2</code></pre>
+        </li>
+        <li>
+            Use the docker stop command to stop the container.
+            <pre><code>$ docker stop [the-container-id]</code></pre>
+        </li>
+        <li>
+            Once the container has stopped, you can remove it by using the "docker rm" command.
+            <pre><code>$docker rm [the-container-id]</code></pre>
 
         </li>
-
+        <li>
+            If you want to kill a container, run:
+            <pre><code>$ docker kill [ContainerID]</code></pre>
+        </li>
+        <li>
+            You can kill multiple containers like this:
+            <pre><code>$ docker kill [ContainerID] [ContainerID] [ContainerID]</code></pre>
+        </li>
     </ol>
 
     </p>
