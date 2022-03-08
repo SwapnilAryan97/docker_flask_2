@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+    {% endblock %}
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <header class="mb-5">
+            <!-- As a link -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="/">Swapnil Aryan Sinha</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="page1") }}">Git</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="page2") }}">Docker</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="{{ url_for('simple_pages.show', page="page3") }}">Python/Flask</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="page4") }}">CI/CD</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-8">
+                {% block content %}
+                {% endblock %}
+            </div>
+                <div class="col-md-auto">
+                    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                        <div class="card-header">In this article</div>
+                        <div class="card-body">
+                            <h4 class="card-title"></h4>
+                            <ul>
+                                <li>Branches</li>
+                                <li>Merge</li>
+                                <li>Commit</li>
+                                <li>Tags</li>
+                                <li>Repositories</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                        <div class="card-header">References</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Meet the Author</h4>
+                            <h5>Vinith Sudhir</h5>
+                            <a href="github.vinith.in">Github</a>
+                            <a href="cv.vinith.in">Linkedin</a>
+                            <a href="twitter.vinith.in">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+<footer>
+    <hr>
+    Environment: {{ deployment_environment }} - Copyright: {{ year }}
+    Message: {{ mymessage }} {{ format_price(100) }}
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+<hr>
+</body>
+</html>
