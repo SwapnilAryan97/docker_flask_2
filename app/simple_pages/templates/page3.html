@@ -31,9 +31,21 @@
     <p>
         Make the following directories one inside the other in the given order : simple_pages/templates. <br>
         Inside the templates directory, add all the html files you want to display on your website that extends from
-        a base template if required.<br>
-
+        a base template<br>
     </p>
+
+    <h6>Rendering and loading the pages</h6>
+    <ul>
+        <li>
+            Create a python function in <i><b>docker_flask/app/simple_pages/ </b></i> named <i><b>__init__.py</b></i>
+        </li>
+        <li>
+            Using flask, we import classes like Blueprint, render_template and abort tp rout and render our simple
+            pages.
+        </li>
+    </ul>
+
+
     <h6>Testing simple pages with pytest</h6>
     <p>
         Create a directory tests in which you can insert the testing file(s) written in python. These tests are run
