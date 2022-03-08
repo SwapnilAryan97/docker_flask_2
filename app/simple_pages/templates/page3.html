@@ -31,9 +31,21 @@
     <p>
         Make the following directories one inside the other in the given order : simple_pages/templates. <br>
         Inside the templates directory, add all the html files you want to display on your website that extends from
-        a base template if required.<br>
-
+        a base template<br>
     </p>
+
+    <h6>Rendering and loading the pages</h6>
+    <ul>
+        <li>
+            Create a python function in <i><b>docker_flask/app/simple_pages/ </b></i> named <i><b>__init__.py</b></i>
+        </li>
+        <li>
+            Using flask, we import classes like Blueprint, render_template and abort tp rout and render our simple
+            pages.
+        </li>
+    </ul>
+
+
     <h6>Testing simple pages with pytest</h6>
     <p>
         Create a directory tests in which you can insert the testing file(s) written in python. These tests are run
@@ -53,6 +65,44 @@ tests/simple_pages_test.py ........                                             
 
 =============================================== 16 passed in 0.32s ================================================</code></pre>
 
+    </p>
+    <p>
+        To run tests, Lint, and Coverage report use this command: <i><b>pytest --pylint --cov</b></i><br>
+        Expected output:
+    <pre><code>root@9aa67c89098e:/home/myuser# pytest --pylint --cov
+========================================================== test session starts ==========================================================
+platform linux -- Python 3.8.12, pytest-7.0.1, pluggy-1.0.0
+rootdir: /home/myuser, configfile: pytest.ini, testpaths: tests
+plugins: pylint-0.18.0, cov-3.0.0
+collected 17 items
+--------------------------------------------------------------------------------
+Linting files
+.
+--------------------------------------------------------------------------------
+
+tests/__init__.py s                                                                                                               [  5%]
+tests/calculator_test.py s.....                                                                                                   [ 41%]
+tests/conftest.py s                                                                                                               [ 47%]
+tests/context_process_test.py s                                                                                                   [ 52%]
+tests/simple_pages_test.py ........                                                                                               [100%]
+
+---------- coverage: platform linux, python 3.8.12-final-0 -----------
+Name                                 Stmts   Miss Branch BrPart  Cover
+----------------------------------------------------------------------
+app/__init__.py                          9      0      0      0   100%
+app/context_processors/__init__.py      14      1      0      0    93%
+app/simple_pages/__init__.py            10      0      0      0   100%
+calculator/__init__.py                  10      0      2      0   100%
+tests/calculator_test.py                20      0      0      0   100%
+tests/conftest.py                       13      1      0      0    92%
+tests/simple_pages_test.py              30      0      0      0   100%
+----------------------------------------------------------------------
+TOTAL                                  106      2      2      0    98%
+
+2 empty files skipped.
+
+
+===================================================== 13 passed, 4 skipped in 0.97s =====================================================</code></pre>
     </p>
 
     <h4>Project files</h4>

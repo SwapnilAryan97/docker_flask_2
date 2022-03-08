@@ -8,5 +8,91 @@
         tested successfully into production. Automated tests verify the software functionality, and automated deployment
         services deliver them to end users. This helps developers discover bugs and defects faster and increases
         productivity and faster release cycles.
+
+    <li>
+        <b>Continuous integration:</b> is a DevOps software development practice where developers regularly merge their
+        code changes into a central repository, after which automated builds and tests are run.
+    </li>
+    <li>
+        <b>Continuous Deployment:</b> is a software release process that uses automated testing to validate if changes
+        to a codebase are correct and stable for immediate autonomous deployment to a production environment.
+        <ul>
+            <li>
+                <b><i>Note</i></b>
+                <ul>
+                    <li>
+                        Continuous Delivery is sometimes confused with Continuous Deployment. Continuous Deployment
+                        means that every change goes through the pipeline and automatically gets put into production,
+                        resulting in many production deployments every day. Continuous Delivery just means that you are
+                        able to do frequent deployments but may choose not to do it, usually due to businesses
+                        preferring a slower rate of deployment. In order to do Continuous Deployment you must be doing
+                        Continuous Delivery.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
     </p>
+
+    <h4>Github Actions</h4>
+    <p>
+        GitHub Actions is a Continuous Integration and Continuous Delivery (CI/CD) platform that allows you to automate
+        your build, test, and deployment pipeline. You can create workflows that build and test every pull request to
+        your repository, or deploy merged pull requests to production.
+    </p>
+    <p>
+    <ol>
+        <li>
+            For the project to use the features of Github Actions, a <i><b>.github/workflows</b></i> directory should be
+            in your repository on Github if it does not exist already.
+        </li>
+        <li>
+            If you have someone else's project, you need to make a few changes.
+            <ul>
+                <li>Change line 42 to have your docker repo address in: .github/workflows/prod.yml</li>
+                <li>Change lines 58 to have your heroku app name in: .github/workflows/prod.yml</li>
+                <li>Change line 59 to have your heroku email in: .github/workflows/prod.yml</li>
+                <li>Change line 31 to have your heroku app name in .github/workflows/dev.yml</li>
+                <li>Change line 32 to have your heroku email in .github/workflows/dev.yml</li>
+                <li>Push code to your local repo and check for any errors and fix any errors that appear when the
+                    workflow is running. You can check the workflow in the
+                    actions.
+                </li>
+            </ul>
+        </li>
+        <li>
+            After configuration, when you commit changes to the repository, Github Actions start the workflow that you
+            can view in the <b>Actions</b> tab in Github in your repository.
+        </li>
+        <li>
+            Similar steps will be invoked upon a pull request.
+        </li>
+        <li>Images are automatically deployed when a pull request has been successful because we have updated the yml
+            file to connect to our docker repository.
+        </li>
+    </ol>
+    <h6>Important</h6>
+    <ul>
+        <li>Go to your <i><b>Github repository -> Settings -> Secrets -> New repository secret</b></i> and add the
+            following:
+            <ul>
+                <li>
+                    DOCKER_PASSWORD
+                </li>
+                <li>
+                    DOCKER_USERNAME
+                </li>
+                <li>
+                    HEROKU_API_KEY
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <b>If the above secrets are not added, you Github will not be able to deploy your app</b>
+
+
+
+    </p>
+
+
 {% endblock %}
