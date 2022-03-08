@@ -18,4 +18,45 @@
         to a codebase are correct and stable for immediate autonomous deployment to a production environment.
     </li>
     </p>
+
+    <h4>Github Actions</h4>
+    <p>
+        GitHub Actions is a Continuous Integration and Continuous Delivery (CI/CD) platform that allows you to automate
+        your build, test, and deployment pipeline. You can create workflows that build and test every pull request to
+        your repository, or deploy merged pull requests to production.
+    </p>
+    <p>
+    <ol>
+        <li>
+            For the project to use the features of Github Actions, a <i><b>.github/workflows</b></i> directory should be
+            in your repository on Github if it does not exist already.
+        </li>
+        <li>
+            If you have someone else's project, you need to make a few changes.
+            <ul>
+                <li>Change line 42 to have your docker repo address in: .github/workflows/prod.yml</li>
+                <li>Change lines 58 to have your heroku app name in: .github/workflows/prod.yml</li>
+                <li>Change line 59 to have your heroku email in: .github/workflows/prod.yml</li>
+                <li>Change line 31 to have your heroku app name in .github/workflows/dev.yml</li>
+                <li>Change line 32 to have your heroku email in .github/workflows/dev.yml</li>
+                <li>Push code to your local repo and check for any errors and fix any errors that appear when the
+                    workflow is running. You can check the workflow in the
+                    actions.
+                </li>
+            </ul>
+        </li>
+        <li>
+            After configuration, when you commit changes to the repository, Github Actions start the workflow that you
+            can view in the <b>Actions</b> tab in Github in your repository.
+        </li>
+        <li>
+            Similar steps will be invoked upon a pull request.
+        </li>
+    </ol>
+
+
+
+    </p>
+
+
 {% endblock %}
