@@ -2,7 +2,7 @@
 
 [![Development Workflow](https://github.com/SwapnilAryan97/docker_flask_2/actions/workflows/dev.yml/badge.svg)](https://github.com/SwapnilAryan97/docker_flask_2/actions/workflows/dev.yml)
 
-* [Production Deployment](https://calc-prod.herokuapp.com/page3)
+* [Production Deployment](https://calc-prod.herokuapp.com)
 
 
 [![Production Workflow](https://github.com/SwapnilAryan97/docker_flask_2/actions/workflows/prod.yml/badge.svg)](https://github.com/SwapnilAryan97/docker_flask_2/actions/workflows/prod.yml)
