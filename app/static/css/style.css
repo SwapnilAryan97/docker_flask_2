@@ -32,3 +32,7 @@ li{
     line-height: 25px;
 }
 
+.banner{
+    height:100px;
+    width: fit-content;
+}
