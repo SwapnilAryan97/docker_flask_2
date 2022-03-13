@@ -28,7 +28,7 @@ class Multiplication:
         return value1 * value2
 
 
-class Divion:
+class Division:
     """This is the Divion Class"""
 
     @staticmethod

@@ -1,5 +1,5 @@
 """Calculation and Addition, Multiplication, and Subtraction Classes """
-from calculator.operations import Addition as Add, Subtraction as Sub, Multiplication as Mul, Divion as Div
+from calculator.operations import Addition as Add, Subtraction as Sub, Multiplication as Mul, Division as Div
 
 
 class Calculations:

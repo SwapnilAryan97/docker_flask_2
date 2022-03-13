@@ -1,4 +1,4 @@
-from operations.calculations import Addition as Add, Subtraction as Sub, Multiplication as Mul, Divion as Div
+from calculator.calculations import Addition as Add, Subtraction as Sub, Multiplication as Mul, Division as Div
 
 class Calculator:
     """ This is the default result property"""
