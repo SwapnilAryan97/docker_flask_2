@@ -21,16 +21,16 @@ def test_calculator_add_method():
 
 def test_calculator_subtract_method():
     """Testing the Calculator Subtract"""
-    tuple_list = (1, 2)
-    assert Calculator.subtract(tuple_list) == -1
+    # tuple_list = (1, 2)
+    assert Calculator.subtract(tuple_list()) == -3
 
 
 def test_calculator_multiply_method():
     """Testing the Calculator Multiply"""
-    tuple_list = (1, 2)
+    # tuple_list = (1, 2)
     assert Calculator.multiply(tuple_list) == 2
 
 def test_calculator_multiply_method():
     """Testing the Calculator Divide"""
-    tuple_list = (1, 2)
-    assert Calculator.divide(tuple_list) == 0.5
+    # tuple_list = (1, 2)
+    assert Calculator.divide(tuple_list()) == 0.5

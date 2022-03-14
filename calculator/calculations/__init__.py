@@ -22,7 +22,7 @@ class Calculations:
         list_values = []
         for val in tuple_list:
             list_values.append(float(val))
-        return tuple(list_values, float)
+        return tuple(list_values)
 
 
 class Addition(Calculations):
@@ -32,8 +32,8 @@ class Addition(Calculations):
         """get the addition result"""
 
         res = 0
-        for values in self.values:
-            res = Add.add(values, res)
+        for value in self.values:
+            res = Add.add(res, value)
         return res
 
 
@@ -43,9 +43,9 @@ class Subtraction(Calculations):
     def get_result(self):
         """get the Subtraction result"""
 
-        res = 1
-        for values in self.values:
-            res = Sub.subtract(values, res)
+        res = 0
+        for value in self.values:
+            res = Sub.subtract(res, value)
         return res
 
 
@@ -56,8 +56,8 @@ class Multiplication(Calculations):
         """get the Multiplication result"""
 
         res = 1
-        for values in self.values:
-            res = Mul.multiply(values, res)
+        for value in self.values:
+            res = Mul.multiply(res, value)
         return res
 
 class Division(Calculations):
@@ -67,6 +67,6 @@ class Division(Calculations):
         """get the Division result"""
 
         res = 1
-        for values in self.values:
-            res = Div.divide(values, res)
+        for value in self.values:
+            res = Div.divide(res, value)
         return res
