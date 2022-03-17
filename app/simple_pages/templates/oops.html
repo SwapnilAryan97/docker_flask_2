@@ -37,18 +37,54 @@
             <li>Attributes are the variables that belong to a class.</li>
             <li>Attributes are always public and can be accessed using the dot (.) operator.</li>
             <li>The syntax for creating a class named Addition is :
-                <pre><code>class Addition:</code></pre>
+                <code>
+                    <pre><span class="code">class Addition:</span></pre>
+                </code>
                 And you can create a method add inside, which returns the sum of two numbers
-                <pre><code>class Addition:
-    """This is the Addition Class"""
+                <pre>
+                <code>
+                    class Addition:
+                    """This is the Addition Class"""
 
-    @staticmethod
-    def add(value1, value2):
-        """This is the addition method"""
-        return value1 + value2</code></pre>
+                    @staticmethod
+                    def add(value1, value2):
+                        """This is the addition method"""
+                        return value1 + value2</code>
+                </pre>
             </li>
         </ul>
         </p>
+
+        <div>
+            <h6>The Self</h6>
+            <p>
+            <ol>
+                <li>
+                    Class methods must have an extra first parameter in the method definition. We do not give a value
+                    for
+                    this parameter when we call the method, Python provides it
+                </li>
+                <li>
+                    If we have a method that takes no arguments, then we still have to have one argument.
+                </li>
+                <li>
+                    This is similar to this pointer in C++ and this reference in Java.
+                </li>
+            </ol>
+            </p>
+        </div>
+        <div>
+            <h6>__init__</h6>
+            <p>
+                The __init__ method is similar to constructors in C++ and Java. Constructors are used to initialize the
+                object’s state. The task of constructors is to initialize(assign values) to the data members of the
+                class
+                when an object of class is created. Like methods, a constructor also contains collection of
+                statements(i.e.
+                instructions) that are executed at time of Object creation. It is run as soon as an object of a class is
+                instantiated. The method is useful to do any initialization you want to do with your object.
+            </p>
+        </div>
     </div>
 
     <div>
@@ -80,6 +116,37 @@
         <p>
             To create an object named Add of the class Addition:
         <pre><code>Add = Addition()</code></pre>
+        </p>
+        <p>
+            To use a method of a class, use can call it with a dot (.) following the method name
+        <pre><code>x = Add.add(5, 9)</code></pre>
+        <ul>
+            <li>
+                Here, x will store the sum of 5 and 9 i.e. 14
+            </li>
+        </ul>
+        </p>
+    </div>
+
+
+    <div>
+        <h4>Polymorphism</h4>
+        <p>
+
+        </p>
+    </div>
+
+    <div>
+        <h4>Encapsulation</h4>
+        <p>
+
+        </p>
+    </div>
+
+    <div>
+        <h4>Inheritance</h4>
+        <p>
+
         </p>
     </div>
 {% endblock %}
