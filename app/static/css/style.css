@@ -6,14 +6,25 @@ body {
     color: slategrey;
 }
 
-pre code {
-    background-color: #eee;
-    border: 1px solid #999;
+code {
+    color: deeppink;
+
+    /*margin-right: 900px;*/
+}
+
+.code {
+    background-color: #ffe0fa	;
+}
+
+pre {
+    margin-left: 0px;
+    background-color: #fcfcfc;
+    border: 2px solid #999;
     display: block;
     padding: 5px;
     margin-bottom: 12px;
     margin-top: 12px;
-    /*margin-right: 900px;*/
+    border-radius: 9px;
 }
 
 h4{
