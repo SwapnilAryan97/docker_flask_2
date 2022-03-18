@@ -43,9 +43,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url_for('simple_pages.show', page="page4") }}">CI/CD</a>
                             </li>
-{#                            <li class="nav-item">#}
-{#                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="oops") }}">OOPs</a>#}
-{#                            </li>#}
+                            {#                            <li class="nav-item">#}
+                            {#                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="oops") }}">OOPs</a>#}
+                            {#                            </li>#}
 
                         </ul>
                     </div>
@@ -61,6 +61,7 @@
                         {#                    MAIN BODY OF WEB PAGES#}
                     {% endblock %}
                 </ARTICLE>
+
             </div>
             <div class="col-md-auto">
                 <div class="card border-secondary mb-3" style="max-width: 20rem;">
@@ -137,6 +138,7 @@
 </div>
 </div>
 </div>
+<hr>
 <footer>
     <hr>
     Environment: {{ deployment_environment }} - Copyright: {{ year }}
