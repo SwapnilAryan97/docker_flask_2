@@ -2,7 +2,7 @@
     color: deeppink;
 }
 
-.dodgerblue{
+.dodgerblue {
     color: dodgerblue;
 }
 
@@ -10,20 +10,27 @@ body {
     font-size: 100%;
 }
 
+ARTICLE {
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+
 .slate-grey {
     color: slategrey;
 }
 
 code {
     color: deeppink;
-
-    /*margin-right: 900px;*/
 }
 
 .code {
-    background-color: #ffe0fa	;
+    background-color: #ffe0fa;
 }
 
+.big-code{
+    margin-right: 0px;
+}
 pre {
     margin-left: 0px;
     background-color: #fcfcfc;
@@ -33,26 +40,28 @@ pre {
     margin-bottom: 12px;
     margin-top: 12px;
     border-radius: 9px;
+    margin-right: 40%;
 }
 
-h4{
+h4 {
     font-weight: bold;
 }
 
-h6{
+h6 {
     font-weight: bold;
 }
 
-h1{
+h1 {
     font-weight: bold;
 }
 
-li{
+li {
     line-height: 25px;
 }
 
-.banner{
-    height:100px;
+.banner {
+    height: 100px;
     width: fit-content;
 }
+
 

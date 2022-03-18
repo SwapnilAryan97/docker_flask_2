@@ -19,7 +19,7 @@
             should have Python/Flask as its heading or in its content, we’d say <b>assert b"Python/Flask" in
             response.data.</b>
 
-        <pre class="dodgerblue">def test_request_page3(client):
+        <pre class="dodgerblue big-code">def test_request_page3(client):
     """This makes the 3rd page"""
     response = client.get("/page3")
     assert response.status_code == 200
@@ -54,7 +54,7 @@
             on the terminal in <i> services -> Docker/Docker-compose:docker_flask/flask//docker_flask-flask-1 </i> using
             the command <b>pytest</b>.<br>
             When testing, you will find the following output when all tests pass:
-        <pre><code>root@0b5144e4d287:/home/myuser# pytest
+        <pre class="big-code"><code>root@0b5144e4d287:/home/myuser# pytest
 =============================================== test session starts ===============================================
 platform linux -- Python 3.8.12, pytest-7.0.1, pluggy-1.0.0
 rootdir: /home/myuser, configfile: pytest.ini, testpaths: tests
@@ -71,7 +71,7 @@ tests/simple_pages_test.py ........                                             
         <p>
             To run tests, Lint, and Coverage report use this command: <i><b>pytest --pylint --cov</b></i><br>
             Expected output:
-        <pre><code>root@9aa67c89098e:/home/myuser# pytest --pylint --cov
+        <pre class="big-code"><code>root@9aa67c89098e:/home/myuser# pytest --pylint --cov
 ========================================================== test session starts ==========================================================
 platform linux -- Python 3.8.12, pytest-7.0.1, pluggy-1.0.0
 rootdir: /home/myuser, configfile: pytest.ini, testpaths: tests
