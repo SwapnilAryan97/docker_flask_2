@@ -1,4 +1,4 @@
-"""Calculation and Addition, Multiplication, and Subtraction Classes """
+"""Calculation add, sub, multiply, divide Classes """
 from calculator.operations import Addition as Add, Subtraction as Sub, Multiplication as Mul, Division as Div
 
 
@@ -59,6 +59,7 @@ class Multiplication(Calculations):
         for value in self.values:
             res = Mul.multiply(res, value)
         return res
+
 
 class Division(Calculations):
     """Calculation Division class"""

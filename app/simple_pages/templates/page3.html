@@ -1,58 +1,60 @@
 {% extends "base_flayout.html" %}
 {% block content %}
+    <article>
 
-    <h1>Python/Flask</h1>
+        <h1>Python/Flask</h1>
 
-    <h4>Testing with pytest</h4>
-    <p>
-        The pytest framework makes it easy to write small, readable tests, and can scale to support complex
-        functional
-        testing for applications and libraries.
-    </p>
-    <p>
-        The following code is a test to check if 'this' html page is loaded properly.
-        Assert is where we look at that resulting state and check if it looks how we’d expect after the dust has
-        settled. It’s where we gather evidence to say the behavior does or does not aligns with what we expect. The
-        assert in our test is where we take that measurement/observation and apply our judgement to it. Since this
-        page
-        should have Python/Flask as its heading or in its content, we’d say <b>assert b"Python/Flask" in
-        response.data.</b>
+        <h4>Testing with pytest</h4>
+        <p>
+            The pytest framework makes it easy to write small, readable tests, and can scale to support complex
+            functional
+            testing for applications and libraries.
+        </p>
+        <p>
+            The following code is a test to check if 'this' html page is loaded properly.
+            Assert is where we look at that resulting state and check if it looks how we’d expect after the dust has
+            settled. It’s where we gather evidence to say the behavior does or does not aligns with what we expect. The
+            assert in our test is where we take that measurement/observation and apply our judgement to it. Since this
+            page
+            should have Python/Flask as its heading or in its content, we’d say <b>assert b"Python/Flask" in
+            response.data.</b>
 
-    <pre><code>def test_request_page3(client):
+        <pre class="dodgerblue big-code">def test_request_page3(client):
     """This makes the 3rd page"""
     response = client.get("/page3")
     assert response.status_code == 200
-    assert b"Python/Flask" in response.data</code></pre>
-    </p>
+    assert b"Python/Flask" in response.data</pre>
+        </p>
 
 
-    <h4>Simple Pages</h4>
-    <h6>Making the directory</h6>
-    <p>
-        Make the following directories one inside the other in the given order : simple_pages/templates. <br>
-        Inside the templates directory, add all the html files you want to display on your website that extends from
-        a base template<br>
-    </p>
+        <h4>Simple Pages</h4>
+        <h6>Making the directory</h6>
+        <p>
+            Make the following directories one inside the other in the given order : simple_pages/templates. <br>
+            Inside the templates directory, add all the html files you want to display on your website that extends from
+            a base template<br>
+        </p>
 
-    <h6>Rendering and loading the pages</h6>
-    <ul>
-        <li>
-            Create a python function in <i><b>docker_flask/app/simple_pages/ </b></i> named <i><b>__init__.py</b></i>
-        </li>
-        <li>
-            Using flask, we import classes like Blueprint, render_template and abort tp rout and render our simple
-            pages.
-        </li>
-    </ul>
+        <h6>Rendering and loading the pages</h6>
+        <ul>
+            <li>
+                Create a python function in <i><b>docker_flask/app/simple_pages/ </b></i> named
+                <i><b>__init__.py</b></i>
+            </li>
+            <li>
+                Using flask, we import classes like Blueprint, render_template and abort tp rout and render our simple
+                pages.
+            </li>
+        </ul>
 
 
-    <h6>Testing simple pages with pytest</h6>
-    <p>
-        Create a directory tests in which you can insert the testing file(s) written in python. These tests are run
-        on the terminal in <i> services -> Docker/Docker-compose:docker_flask/flask//docker_flask-flask-1 </i> using
-        the command <b>pytest</b>.<br>
-        When testing, you will find the following output when all tests pass:
-    <pre><code>root@0b5144e4d287:/home/myuser# pytest
+        <h6>Testing simple pages with pytest</h6>
+        <p>
+            Create a directory tests in which you can insert the testing file(s) written in python. These tests are run
+            on the terminal in <i> services -> Docker/Docker-compose:docker_flask/flask//docker_flask-flask-1 </i> using
+            the command <b>pytest</b>.<br>
+            When testing, you will find the following output when all tests pass:
+        <pre class="big-code"><code>root@0b5144e4d287:/home/myuser# pytest
 =============================================== test session starts ===============================================
 platform linux -- Python 3.8.12, pytest-7.0.1, pluggy-1.0.0
 rootdir: /home/myuser, configfile: pytest.ini, testpaths: tests
@@ -65,11 +67,11 @@ tests/simple_pages_test.py ........                                             
 
 =============================================== 16 passed in 0.32s ================================================</code></pre>
 
-    </p>
-    <p>
-        To run tests, Lint, and Coverage report use this command: <i><b>pytest --pylint --cov</b></i><br>
-        Expected output:
-    <pre><code>root@9aa67c89098e:/home/myuser# pytest --pylint --cov
+        </p>
+        <p>
+            To run tests, Lint, and Coverage report use this command: <i><b>pytest --pylint --cov</b></i><br>
+            Expected output:
+        <pre class="big-code"><code>root@9aa67c89098e:/home/myuser# pytest --pylint --cov
 ========================================================== test session starts ==========================================================
 platform linux -- Python 3.8.12, pytest-7.0.1, pluggy-1.0.0
 rootdir: /home/myuser, configfile: pytest.ini, testpaths: tests
@@ -103,282 +105,305 @@ TOTAL                                  106      2      2      0    98%
 
 
 ===================================================== 13 passed, 4 skipped in 0.97s =====================================================</code></pre>
-    </p>
-
-    <h4>Project files</h4>
-    <div>
-        <p>
-        <ul>
-            <li>
-                <b>docker_flask</b> <- root of the project
-                <ul>
-                    <li><b>.github</b></li>
-                    <ul>
-                        <li>
-                            <b>workflows</b> <- contains the yml files for proper workflow of authorized user
-                        </li>
-                        <ul>
-                            <li>
-                                <b>dev.yml</b> <- projects development workflow
-                            </li>
-                            <li>
-                                <b>prod.yml</b> <- projects production workflow
-                            </li>
-                        </ul>
-                    </ul>
-                    <li>
-                        <b>.pytest_cache</b> <- offer a mechanism through which other plugins can get/set values via
-                        config.cache.get|set. This is used by pytest-pep8 and pytest-flakes for example to store the
-                        mtime of the last check to avoid re-checking files all the time.<br>The default cache directory
-                        has been renamed from .cache to .pytest_cache after community feedback that the name .cache did
-                        not make it clear that it was used by pytest.
-                        <ul>
-                            <li>
-                                <b>cache</b> <- directory containing the cache files
-                                <ul>
-                                    <li>
-                                        <b>lastfailed</b> <- The plugin provides two command line options to rerun
-                                        failures
-                                        from the last pytest invocation: --lf , --last-failed - to only re-run the
-                                        failures.
-                                        --ff , --failed-first - to run the failures first and then the rest of the
-                                        tests.
-                                    </li>
-                                    <li>
-                                        <b>nodeids</b> <- The node ids in pytest are built of several components,
-                                        separated
-                                        by a double colon
-                                        “::”. For test functions, these components are the relative path of the test
-                                        module
-                                        and the name of the function.cache file of node id
-                                    </li>
-                                    <li>
-                                        <b>stepwise</b> <- pytest-stepwise is a plugin for pytest that run all tests
-                                        until a
-                                        test fails, and then continue next test run from where the last run failed.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>.gitignore</b> <- The .gitignore file tells Git which files to ignore when committing
-                                your project to the
-                                GitHub repository.
-                            </li>
-                            <li>
-                                <b>CACHEDIR.TAG</b> <- Only one cache directory tag is required to tag an entire
-                                subdirectory tree of cached content. The application should also regenerate the cache
-                                directory tag if it
-                                disappears: e.g., if the entire contents of the cache directory is deleted without the
-                                directory itself being deleted.
-                            </li>
-                            <li>
-                                <b>README.md</b> <- text file explaining .pytest_cache directory.
-                            </li>
-
-                        </ul>
-                    </li>
-
-
-                    <li>
-                        <b>app</b> <- contains all html, css and javascript files
-                        <ul>
-                            <li>
-                                <b>context_processors</b> <- To inject new variables automatically into the context of a
-                                template, context processors exist in Flask. Context processors run before the template
-                                is rendered and have the ability to inject new values into the template context. A
-                                context processor is a function that returns a dictionary.
-                                <ul>
-                                    <li>
-                                        <b>__init__.py</b> <- the Flask application object creation has to be in the
-                                        __init__.py file. That
-                                        way each module can import it safely and the __name__ variable will resolve to
-                                        the
-                                        correct package.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>simple_pages</b> <- simple pages are not item pages and are not dynamically
-                                generated. They are free-standing pages that you construct using an editor box that
-                                allows you to write text, insert images, and even embed videos.
-                                <ul>
-                                    <li>
-                                        <b>templates</b>
-                                    </li>
-                                    <ul>
-                                        <li>
-                                            <b>about.html</b> <- information about the web application
-                                        </li>
-                                        <li>
-                                            <b>index.html</b> <- main page
-                                        </li>
-                                        <li>
-                                            <b>page1.html</b> <- information about git (merge, commit, branching)
-                                        </li>
-                                        <li>
-                                            <b>page2.html</b> <- information about docker
-                                        </li>
-                                        <li>
-                                            <b>page3.html</b> <- information about flask
-                                        </li>
-                                        <li>
-                                            <b>page4.html</b> <- Continuous Integration and Deployment
-                                        </li>
-                                    </ul>
-                                    <li>
-                                        <b>__init__.py </b> <- a function that renders, locates and returns pages stored
-                                        in simple_pages/templates.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>static</b> <- a directory that has images, css and javascript files.
-                                <ul>
-                                    <li>
-                                        <b>css</b> <- directory containing css files
-                                    </li>
-                                    <ul>
-                                        <li>
-                                            <b>style.css</b> <- style sheet for html files
-                                        </li>
-                                        <li>
-                                            <b>images</b> <- directory of images used in web application
-                                        </li>
-                                        <li>
-                                            <b>js</b> <- directory with javascript files
-                                            <ul>
-                                                <li>
-                                                    <b>scripts.js</b> <- javascript file
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                    </ul>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>templates</b> <- contains the base html file for the web application
-                                <ul>
-                                    <li>
-                                        <b>base.html</b> <- base file for all html pages
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <b>__init__.py</b> <- Create and configure an instance of the Flask application.
-                            </li>
-                            <li>
-                                <b>run.py</b> <- This allows Gunicorn to serve the app in production
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <b>calculator</b> <- directory with calculator related python files
-                        <ul>
-                            <li>
-                                <b>__init__.py</b> <- class for calculator calculations
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <b>tests</b> <- directory containing test files for github action
-                        <ul>
-                            <li>
-                                <b>__init__.py</b> <- instance of tests
-                            </li>
-                            <li>
-                                <b>calculator_test.py</b> <- test to check calculations
-                            </li>
-                            <li>
-                                <b>conftest.py</b> <- test configuration setup
-                            </li>
-                            <li>
-                                <b>context_process_test.py</b> <- checks for printing copyrights and environment
-                            </li>
-                            <li>
-                                <b>simple_pages_test.py</b> <- test to check if all documents simple_pages are correctly
-                                displayed
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <b>.coveragerc</b> <- it's a tool for measuring code coverage of Python programs. It monitors
-                        your
-                        program, noting which parts of the code have been executed, then analyzes the source to identify
-                        code
-                        that could have been executed but was not. Coverage measurement is typically used to gauge the
-                        effectiveness of tests.
-                    </li>
-                    <li>
-                        <b>.dockerignore</b> <- it allows you to exclude files from the context like a . gitignore file
-                        allow
-                        you
-                        to exclude files from your git repository. It helps to make build faster and lighter by
-                        excluding from
-                        the context big files or repository that are not used in the build.
-                    </li>
-                    <li>
-                        <b>.gitignore</b> <- it tells Git which files to ignore when committing your project to the
-                        GitHub
-                        repository. gitignore is located in the root directory of your repo. The .gitignore file itself
-                        is a
-                        plain text document.
-                    </li>
-                    <li>
-                        <b>.pylintrc</b> <- it is a tool that checks for errors in Python code, tries to enforce a
-                        coding
-                        standard and looks for code smells. It can also look for certain type errors, it can recommend
-                        suggestions about how particular blocks can be refactored and can offer you details about the
-                        code's
-                        complexity.
-                    </li>
-                    <li>
-                        <b>docker-compose.yml</b> <- Compose is a tool for defining and running multi-container Docker
-                        applications. With Compose, you use a YAML file to configure your application's services. Then,
-                        with a
-                        single command, you create and start all the services from your configuration
-                    </li>
-                    <li>
-                        <b>Dockerfile</b> <- A text document that contains all the commands a user could call on the
-                        command
-                        line to assemble an image. Using docker build users can create an automated build that executes
-                        several
-                        command-line instructions in succession.
-                    </li>
-                    <li>
-                        <b>heroku.yml</b> <- A configuration file for heroku server
-                    </li>
-                    <li>
-                        <b>pytest.ini</b> <- is the main configuration file of pytest, which can change the running mode
-                        of
-                        pytest. It is a fixed file, read the configuration information, and run in the specified way.
-                    </li>
-                    <li>
-                        <b>readme.md</b> <- contains a few explanations to run the project for yourself
-                    </li>
-                    <li>
-                        <b>requirements.txt</b> <- A type of file that usually stores information about all the
-                        libraries,
-                        modules, and packages in itself that are used while developing a particular project. It also
-                        stores all
-                        files and packages on which that project is dependent or requires to run.
-                    </li>
-                    <li>
-                        <b>setup.py</b> <- A python file, the presence of which is an indication that the module/package
-                        you are
-                        about to install has likely been packaged and distributed with Distutils, which is the standard
-                        for
-                        distributing Python Modules. This allows you to easily install Python packages.
-                    </li>
-                </ul>
-
-        </ul>
-
-
         </p>
-    </div>
 
-    <h4>Links</h4>
+        <h4>Project files</h4>
+        <div>
+            <p>
+            <ul>
+                <li>
+                    <b>docker_flask</b> <- root of the project
+                    <ul>
+                        <li><b>.github</b></li>
+                        <ul>
+                            <li>
+                                <b>workflows</b> <- contains the yml files for proper workflow of authorized user
+                            </li>
+                            <ul>
+                                <li>
+                                    <b>dev.yml</b> <- projects development workflow
+                                </li>
+                                <li>
+                                    <b>prod.yml</b> <- projects production workflow
+                                </li>
+                            </ul>
+                        </ul>
+                        <li>
+                            <b>.pytest_cache</b> <- offer a mechanism through which other plugins can get/set values via
+                            config.cache.get|set. This is used by pytest-pep8 and pytest-flakes for example to store the
+                            mtime of the last check to avoid re-checking files all the time.<br>The default cache
+                            directory
+                            has been renamed from .cache to .pytest_cache after community feedback that the name .cache
+                            did
+                            not make it clear that it was used by pytest.
+                            <ul>
+                                <li>
+                                    <b>cache</b> <- directory containing the cache files
+                                    <ul>
+                                        <li>
+                                            <b>lastfailed</b> <- The plugin provides two command line options to rerun
+                                            failures
+                                            from the last pytest invocation: --lf , --last-failed - to only re-run the
+                                            failures.
+                                            --ff , --failed-first - to run the failures first and then the rest of the
+                                            tests.
+                                        </li>
+                                        <li>
+                                            <b>nodeids</b> <- The node ids in pytest are built of several components,
+                                            separated
+                                            by a double colon
+                                            “::”. For test functions, these components are the relative path of the test
+                                            module
+                                            and the name of the function.cache file of node id
+                                        </li>
+                                        <li>
+                                            <b>stepwise</b> <- pytest-stepwise is a plugin for pytest that run all tests
+                                            until a
+                                            test fails, and then continue next test run from where the last run failed.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>.gitignore</b> <- The .gitignore file tells Git which files to ignore when
+                                    committing
+                                    your project to the
+                                    GitHub repository.
+                                </li>
+                                <li>
+                                    <b>CACHEDIR.TAG</b> <- Only one cache directory tag is required to tag an entire
+                                    subdirectory tree of cached content. The application should also regenerate the
+                                    cache
+                                    directory tag if it
+                                    disappears: e.g., if the entire contents of the cache directory is deleted without
+                                    the
+                                    directory itself being deleted.
+                                </li>
+                                <li>
+                                    <b>README.md</b> <- text file explaining .pytest_cache directory.
+                                </li>
 
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <b>app</b> <- contains all html, css and javascript files
+                            <ul>
+                                <li>
+                                    <b>context_processors</b> <- To inject new variables automatically into the context
+                                    of a
+                                    template, context processors exist in Flask. Context processors run before the
+                                    template
+                                    is rendered and have the ability to inject new values into the template context. A
+                                    context processor is a function that returns a dictionary.
+                                    <ul>
+                                        <li>
+                                            <b>__init__.py</b> <- the Flask application object creation has to be in the
+                                            __init__.py file. That
+                                            way each module can import it safely and the __name__ variable will resolve
+                                            to
+                                            the
+                                            correct package.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>simple_pages</b> <- simple pages are not item pages and are not dynamically
+                                    generated. They are free-standing pages that you construct using an editor box that
+                                    allows you to write text, insert images, and even embed videos.
+                                    <ul>
+                                        <li>
+                                            <b>templates</b>
+                                        </li>
+                                        <ul>
+                                            <li>
+                                                <b>about.html</b> <- information about the web application
+                                            </li>
+                                            <li>
+                                                <b>index.html</b> <- main page
+                                            </li>
+                                            <li>
+                                                <b>page1.html</b> <- information about git (merge, commit, branching)
+                                            </li>
+                                            <li>
+                                                <b>page2.html</b> <- information about docker
+                                            </li>
+                                            <li>
+                                                <b>page3.html</b> <- information about flask
+                                            </li>
+                                            <li>
+                                                <b>page4.html</b> <- Continuous Integration and Deployment
+                                            </li>
+                                        </ul>
+                                        <li>
+                                            <b>__init__.py </b> <- a function that renders, locates and returns pages
+                                            stored
+                                            in simple_pages/templates.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>static</b> <- a directory that has images, css and javascript files.
+                                    <ul>
+                                        <li>
+                                            <b>css</b> <- directory containing css files
+                                        </li>
+                                        <ul>
+                                            <li>
+                                                <b>style.css</b> <- style sheet for html files
+                                            </li>
+                                            <li>
+                                                <b>images</b> <- directory of images used in web application
+                                            </li>
+                                            <li>
+                                                <b>js</b> <- directory with javascript files
+                                                <ul>
+                                                    <li>
+                                                        <b>scripts.js</b> <- javascript file
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>templates</b> <- contains the base html file for the web application
+                                    <ul>
+                                        <li>
+                                            <b>base.html</b> <- base file for all html pages
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>__init__.py</b> <- Create and configure an instance of the Flask application.
+                                </li>
+                                <li>
+                                    <b>run.py</b> <- This allows Gunicorn to serve the app in production
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <b>calculator</b> <- directory with calculator related python files
+                            <ul>
+                                <li>
+                                    <b>__init__.py</b> <- class for calculator calculations
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>tests</b> <- directory containing test files for github action
+                            <ul>
+                                <li>
+                                    <b>__init__.py</b> <- instance of tests
+                                </li>
+                                <li>
+                                    <b>calculator_test.py</b> <- test to check calculations
+                                </li>
+                                <li>
+                                    <b>conftest.py</b> <- test configuration setup
+                                </li>
+                                <li>
+                                    <b>context_process_test.py</b> <- checks for printing copyrights and environment
+                                </li>
+                                <li>
+                                    <b>simple_pages_test.py</b> <- test to check if all documents simple_pages are
+                                    correctly
+                                    displayed
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>.coveragerc</b> <- it's a tool for measuring code coverage of Python programs. It
+                            monitors
+                            your
+                            program, noting which parts of the code have been executed, then analyzes the source to
+                            identify
+                            code
+                            that could have been executed but was not. Coverage measurement is typically used to gauge
+                            the
+                            effectiveness of tests.
+                        </li>
+                        <li>
+                            <b>.dockerignore</b> <- it allows you to exclude files from the context like a . gitignore
+                            file
+                            allow
+                            you
+                            to exclude files from your git repository. It helps to make build faster and lighter by
+                            excluding from
+                            the context big files or repository that are not used in the build.
+                        </li>
+                        <li>
+                            <b>.gitignore</b> <- it tells Git which files to ignore when committing your project to the
+                            GitHub
+                            repository. gitignore is located in the root directory of your repo. The .gitignore file
+                            itself
+                            is a
+                            plain text document.
+                        </li>
+                        <li>
+                            <b>.pylintrc</b> <- it is a tool that checks for errors in Python code, tries to enforce a
+                            coding
+                            standard and looks for code smells. It can also look for certain type errors, it can
+                            recommend
+                            suggestions about how particular blocks can be refactored and can offer you details about
+                            the
+                            code's
+                            complexity.
+                        </li>
+                        <li>
+                            <b>docker-compose.yml</b> <- Compose is a tool for defining and running multi-container
+                            Docker
+                            applications. With Compose, you use a YAML file to configure your application's services.
+                            Then,
+                            with a
+                            single command, you create and start all the services from your configuration
+                        </li>
+                        <li>
+                            <b>Dockerfile</b> <- A text document that contains all the commands a user could call on the
+                            command
+                            line to assemble an image. Using docker build users can create an automated build that
+                            executes
+                            several
+                            command-line instructions in succession.
+                        </li>
+                        <li>
+                            <b>heroku.yml</b> <- A configuration file for heroku server
+                        </li>
+                        <li>
+                            <b>pytest.ini</b> <- is the main configuration file of pytest, which can change the running
+                            mode
+                            of
+                            pytest. It is a fixed file, read the configuration information, and run in the specified
+                            way.
+                        </li>
+                        <li>
+                            <b>readme.md</b> <- contains a few explanations to run the project for yourself
+                        </li>
+                        <li>
+                            <b>requirements.txt</b> <- A type of file that usually stores information about all the
+                            libraries,
+                            modules, and packages in itself that are used while developing a particular project. It also
+                            stores all
+                            files and packages on which that project is dependent or requires to run.
+                        </li>
+                        <li>
+                            <b>setup.py</b> <- A python file, the presence of which is an indication that the
+                            module/package
+                            you are
+                            about to install has likely been packaged and distributed with Distutils, which is the
+                            standard
+                            for
+                            distributing Python Modules. This allows you to easily install Python packages.
+                        </li>
+                    </ul>
+
+            </ul>
+
+
+            </p>
+        </div>
+
+    </article>
 {% endblock %}
