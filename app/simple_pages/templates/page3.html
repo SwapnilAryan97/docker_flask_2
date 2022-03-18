@@ -18,11 +18,11 @@
         should have Python/Flask as its heading or in its content, we’d say <b>assert b"Python/Flask" in
         response.data.</b>
 
-    <pre><code>def test_request_page3(client):
+    <pre class="dodgerblue">def test_request_page3(client):
     """This makes the 3rd page"""
     response = client.get("/page3")
     assert response.status_code == 200
-    assert b"Python/Flask" in response.data</code></pre>
+    assert b"Python/Flask" in response.data</pre>
     </p>
 
 

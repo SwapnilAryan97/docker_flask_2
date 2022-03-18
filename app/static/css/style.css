@@ -1,3 +1,11 @@
+.deeppink {
+    color: deeppink;
+}
+
+.dodgerblue{
+    color: dodgerblue;
+}
+
 body {
     font-size: 100%;
 }
@@ -47,3 +55,4 @@ li{
     height:100px;
     width: fit-content;
 }
+
