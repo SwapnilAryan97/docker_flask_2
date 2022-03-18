@@ -41,16 +41,14 @@
                     <pre><span class="code">class Addition:</span></pre>
                 </code>
                 And you can create a method add inside, which returns the sum of two numbers
-                <pre>
-                <code>
-                    class Addition:
-                    """This is the Addition Class"""
+                <pre class="dodgerblue">
+class Addition:
+"""This is the Addition Class"""
 
-                    @staticmethod
-                    def add(value1, value2):
-                        """This is the addition method"""
-                        return value1 + value2</code>
-                </pre>
+@staticmethod
+def add(value1, value2):
+    """This is the addition method"""
+    return value1 + value2</pre>
             </li>
         </ul>
         </p>
@@ -62,7 +60,7 @@
                 <li>
                     Class methods must have an extra first parameter in the method definition. We do not give a value
                     for
-                    this parameter when we call the method, Python provides it
+                    this parameter when we call the method, Python provides it.
                 </li>
                 <li>
                     If we have a method that takes no arguments, then we still have to have one argument.
@@ -74,7 +72,7 @@
             </p>
         </div>
         <div>
-            <h6>__init__</h6>
+            <h6><span class="code deeppink">__init__</span></h6>
             <p>
                 The __init__ method is similar to constructors in C++ and Java. Constructors are used to initialize the
                 object’s state. The task of constructors is to initialize(assign values) to the data members of the
@@ -113,19 +111,25 @@
             </li>
         </ul>
         </p>
+
         <p>
             To create an object named Add of the class Addition:
-        <pre><code>Add = Addition()</code></pre>
+        <div><code>
+            <pre>Add = Addition()</pre>
+        </code></div>
         </p>
         <p>
             To use a method of a class, use can call it with a dot (.) following the method name
-        <pre><code>x = Add.add(5, 9)</code></pre>
+        <div><code>
+            <pre>x = Add.add(5, 9)</pre>
+        </code></div>
         <ul>
             <li>
                 Here, x will store the sum of 5 and 9 i.e. 14
             </li>
         </ul>
         </p>
+
     </div>
 
 
