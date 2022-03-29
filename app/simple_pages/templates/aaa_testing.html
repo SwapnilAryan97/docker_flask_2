@@ -1,0 +1,78 @@
+{% extends "base_flayout.html" %}
+{% block content %}
+
+
+
+    <h1>AAA Testing</h1>
+
+    {#    <h4>What is it?</h4>#}
+    <p>
+        The <span class="code deeppink">AAA</span> (Arrange, Act, Assert) pattern is a common way of writing unit tests
+        for a method under test. The Arrange section of a unit test method initializes objects and sets the value of the
+        data that is passed to the
+        method under test.
+    </p>
+    <h4>Arrange</h4>
+    <p>
+        Initializes objects, creates mocks with arguments that are passed to the method under test and adds
+        expectations.
+    </p>
+    <p>
+        So the arrange section you only have code required to setup that specific test. Here objects would be created,
+        mocks setup (if you are using one) and potentially expectations would be set. Then there is the Act, which
+        should be the invocation of the method being tested. And on Assert you would simply check whether the
+        expectations were met.
+    </p>
+
+    <h4>Act</h4>
+    <p>
+        Invokes the method or property under test with the arranged parameters.
+    </p>
+
+    <h4>Assert</h4>
+    <p>
+        Verifies that the action of the method under test behaves as expected.
+    </p>
+
+    <h4><span class="code deeppink">Example:</span></h4>
+
+    <code class="dodgerblue"><pre>def test_request_page6(client):
+    """This makes the AAA Testing page"""
+    response = client.get("/aaa_testing")
+    assert response.status_code == 200
+    assert b"AAA Testing" in response.data</pre>
+    </code>
+
+    <br>
+
+
+    <h4>Why is testing important?</h4>
+    <p>
+    <ul>
+        <li>
+            <b> Detecting problems early -</b> Unit tests discloses problems early into the development.
+        </li>
+        <li>
+            <b>Mitigating change -</b> Allows the developer to refactor the source code during the testing stage and
+            later on,
+            while still making sure the module works as expected.
+        </li>
+
+        <li>
+            <b>Simplifying integration -</b> By testing the separate components of an application first and then testing
+            them
+            altogether, integration testing becomes much easier.
+
+        </li>
+
+        <li>
+            <b>Source of Documentation -</b> The unit testing with doctest provides a better insight.
+
+        </li>
+    </ul>
+    Also unit tests can be run quickly, easily, and as frequently as the project requires it. They serve as executable
+    documentation for the application, and they also serve as an invaluable reminder of bugs you've fixed in the past.
+    As such, they decrease the development time, thus allow to quickly deliver functional code - and that's really the
+    bottom line.
+    </p>
+{% endblock %}

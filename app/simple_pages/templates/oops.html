@@ -136,21 +136,217 @@ def add(value1, value2):
     <div>
         <h4>Polymorphism</h4>
         <p>
-
+            Polymorphism simply means having many forms. For example, we need to determine if the given species of birds
+            fly or not, using polymorphism we can do this using a single function.
         </p>
     </div>
 
     <div>
         <h4>Encapsulation</h4>
         <p>
+            Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It describes the idea
+            of wrapping data and the methods that work on data within one unit. This puts restrictions on accessing
+            variables and methods directly and can prevent the accidental modification of data. To prevent accidental
+            change, an object’s variable can only be changed by an object’s method. Those types of variables are known
+            as private variables.
 
         </p>
+        <p>
+            Class Addition containing a method add:
+        </p>
+
+        <code>
+
+            <pre>class Addition:
+    """This is the Addition Class"""
+
+    @staticmethod
+    def add(value1, value2):
+        """This is the addition method"""
+        return value1 + value2</pre>
+        </code>
     </div>
 
     <div>
         <h4>Inheritance</h4>
         <p>
+            Inheritance is the capability of one class to derive or inherit the properties from another class. The class
+            that derives properties is called the derived class or child class and the class from which the properties
+            are being derived is called the base class or parent class.
+        <ul>
+            <li>
+                It represents real-world relationships well.
+            </li>
+            <li>
+                It provides the reusability of a code. We don’t have to write the same code again and again. Also, it
+                allows us to add more features to a class without modifying it.
+            </li>
+            <li>
+                It is transitive in nature, which means that if class B inherits from another class A, then all the
+                subclasses of B would automatically inherit from class A. <br>
+                Here, class addition inherits class Calculations:
+            </li>
+
+        </ul>
+        </p>
+
+        <code><pre>class Addition(Calculations):
+    """Calculation addition class"""
+
+    def get_result(self):
+        """get the addition result"""
+
+        res = 0
+        for value in self.values:
+            res = Add.add(res, value)
+        return res</pre>
+        </code>
+
+    </div>
+
+    <div>
+        <h4>Instantiation</h4>
+        <p>
+            Used to create an object instance from a class
+
+            To instantiate is to create such an instance by, for example, defining one particular variation of object
+            within a class, giving it a name, and locating it in some physical place. <br> 1) In object-oriented
+            programming,
+            some writers say that you instantiate a class to create an object, a concrete instance of the class.
+        </p>
+    </div>
+
+    <div>
+        <h4>Namespace</h4>
+        <p>
+            Namespace is the approach of grouping named scope to avoid conflicts with similar names as used in other
+            scopes. Namespace block contains symbols that are grouped into a named scope to avoid conflicts with
+            similarly named symbols in other scopes.
+            <br>
+            Better organization by grouping classes that work together Same name to be used for more than one class
+            without conflicts
 
         </p>
     </div>
+
+    <div>
+        <h4>Constructor</h4>
+        <p>
+            A constructor is a special kind of method that Python calls when it instantiates an object using the
+            definitions found in your class. Python relies on the constructor to perform tasks such as initializing
+            (assigning values to) any instance variables that the object will need when it starts.
+        </p>
+    </div>
+
+    <div>
+        <h4>Fixture</h4>
+        <p>
+            Software test fixtures initialize test functions. They provide a fixed baseline so that tests execute
+            reliably and produce consistent, repeatable, results. Initialization may setup services, state, or other
+            operating environments. These are accessed by test functions through arguments; for each fixture used by a
+            test function there is typically a parameter (named after the fixture) in the test function’s definition.
+
+
+        </p>
+    </div>
+
+    <div>
+        <h4>Type Hint and Type Cast</h4>
+        <p>
+        <ul>
+            <li>
+                Type hinting can also be used to force a function to get an argument of type Object. For this purpose,
+                we
+                put the name of the class in front of the argument name in the function.
+            </li>
+            <li>
+                Type Casting is the method to convert the variable data type into a certain data type in order to the
+                operation required to be performed by users.
+            </li>
+
+        </ul>
+
+
+        </p>
+    </div>
+
+    <div>
+        <h4>Unit Test</h4>
+        <p>
+            Unit testing is a technique in which particular module is tested to check by developer himself whether there
+            are any errors. The primary focus of unit testing is test an individual unit of system to analyze, detect,
+            and fix the errors.
+
+        </p>
+
+        To check if addition class returns correct answer to a given tuple.
+        <code><pre>def test_calculator_add_method():
+    """Testing the Calculator Add"""
+    # this is show using the calculator object add method
+
+    ## Act for AAA testing
+    result = Calculator.add(tuple_list())
+
+    ## Assertion for AAA testing
+    assert result == 3</pre>
+        </code>
+
+    </div>
+
+    <div>
+        <h4>Static</h4>
+        <p>
+            When we declare a variable inside a class, but outside the method, it is called a static or class variable.
+            It can be called directly from a class but not through the instances of a class. However, the static
+            variables are quite different from the other member, and it does not conflict with the same variable name in
+            the Python program
+
+
+        </p>
+    </div>
+
+    <div>
+        <h4>Instance Method</h4>
+        <p>
+
+            Instance method are methods which require an object of its class to be created before it can be called. To
+            invoke a instance method, we have to create an Object of the class in which the method is defined.
+        </p>
+    </div>
+
+    <div>
+        <h4>Instance Property</h4>
+        <p>
+            An instance attribute is a Python variable belonging to only one object. It is only accessible in the scope
+            of the object and it is defined inside the constructor function of a class.
+        </p>
+    </div>
+
+    <div>
+        <h4>Static Method</h4>
+        <p>
+            Static methods, much like class methods, are methods that are bound to a class rather than its object. They
+            do not require a class instance creation. So, they are not dependent on the state of the object.
+            <br><br>
+            In other words...
+            <br><br>
+
+            Static methods in Python are extremely similar to python class level methods, the difference being that a
+            static method is bound to a class rather than the objects for that class. This means that a static method
+            can be called without an object for that class.
+        </p>
+    </div>
+
+    <div>
+        <h4>Static Property</h4>
+        <p>
+
+            A static property or method acts somewhat like a globally accessible function or variable. Simply import the
+            class, and you can read the same value from anywhere else in the program. It's usually not advisable to rely
+            on global variables as they can lead to spaghetti code, but that's not to say that they can't be used.
+        </p>
+    </div>
+
+
+
 {% endblock %}
