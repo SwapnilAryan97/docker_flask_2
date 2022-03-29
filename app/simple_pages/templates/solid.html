@@ -1,0 +1,53 @@
+{% extends "base_flayout.html" %}
+{% block content %}
+
+    <h1>SOLID Principles</h1>
+    <p>
+        SOLID is an acronym for the first five object-oriented design (OOD) principles by Robert C. Martin
+    </p>
+    <p>
+        These principles establish practices that lend to developing software with considerations for maintaining and
+        extending as the project grows. Adopting these practices can also contribute to avoiding code smells,
+        refactoring code, and Agile or Adaptive software development.
+    </p>
+    <p>
+        SOLID stands for:
+    <ul>
+        <li><b class="dodgerblue">S:</b> Single-responsiblity Principle</li>
+        <li><b class="dodgerblue">O:</b> Open-closed Principle</li>
+        <li><b class="dodgerblue">L:</b> Liskov Substitution Principle</li>
+        <li><b class="dodgerblue">I:</b> Interface Segregation Principle</li>
+        <li><b class="dodgerblue">D:</b> Dependency Inversion Principle</li>
+    </ul>
+    </p>
+
+    <h6 class="dodgerblue">Single-responsiblity Principle</h6>
+    <p>
+        A class should have one and only one reason to change, meaning that a class should have only one job.
+    </p>
+
+    <h6 class="dodgerblue">Open-closed Principle</h6>
+    <p>
+        Objects or entities should be open for extension but closed for modification. This means that a class should be
+        extendable without modifying the class itself.
+    </p>
+
+    <h6 class="dodgerblue">Liskov Substitution Principle</h6>
+    <p>
+        Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type
+        S where S is a subtype of T. This means that every subclass or derived class should be substitutable for their
+        base or parent class.
+    </p>
+
+    <h6 class="dodgerblue">Interface Segregation Principle</h6>
+    <p>
+        A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to
+        depend on methods they do not use.
+    </p>
+
+    <h6 class="dodgerblue">Dependency Inversion Principles</h6>
+    <p>
+        Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend
+        on the low-level module, but they should depend on abstractions.
+    </p>
+{% endblock %}

@@ -67,4 +67,12 @@ li {
     width: fit-content;
 }
 
+.btn:hover, .btn:active {
+  /*background-color: #666;*/
+    font-weight: bold;
+}
+
+
+
+
 
