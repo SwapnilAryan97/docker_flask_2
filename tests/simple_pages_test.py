@@ -53,11 +53,19 @@ def test_request_page5(client):
     assert response.status_code == 200
     assert b"Object Oriented Programming with Python" in response.data
 
+
 def test_request_page6(client):
     """This makes the AAA Testing page"""
     response = client.get("/aaa_testing")
     assert response.status_code == 200
     assert b"AAA Testing" in response.data
+
+
+def test_request_page7(client):
+    """This makes the SOLID page"""
+    response = client.get("/solid")
+    assert response.status_code == 200
+    assert b"SOLID Principles" in response.data
 
 
 def test_request_page_not_found(client):
