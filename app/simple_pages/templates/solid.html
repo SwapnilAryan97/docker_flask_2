@@ -25,18 +25,95 @@
     <p>
         A class should have one and only one reason to change, meaning that a class should have only one job.
     </p>
+    <p>
+        This principle states that “a class should have only one reason to change” which means every class should have a
+        single responsibility or single job or single purpose. Take the example of developing software. The task is
+        divided into different members doing different things as front-end designers do design, the tester does testing
+        and backend developer takes care of backend development part then we can say that everyone has a single job or
+        responsibility.
+    </p>
+    <p>
+        Most of the time it happens that when programmers have to add features or new behavior they implement everything
+        into the existing class which is completely wrong. It makes their code lengthy, complex and consumes time when
+        later something needs to be modified. Use layers in your application and break God classes into smaller classes
+        or modules.
+    </p>
+    <code><pre>class Add:
+    @staticmethod
+    def add(num1, num2):
+        add_res = num1 + num2
+        return add_res
+        return add_res
+</pre>
+    </code>
 
     <h6 class="dodgerblue">Open-closed Principle</h6>
     <p>
         Objects or entities should be open for extension but closed for modification. This means that a class should be
         extendable without modifying the class itself.
     </p>
+    <p>
+        Suppose developer A needs to release an update for a library or framework and developer B wants some
+        modification or add some feature on that then developer B is allowed to extend the existing class created by
+        developer A but developer B is not supposed to modify the class directly. Using this principle separates the
+        existing code from the modified code so it provides better stability, maintainability and minimizes changes as
+        in your code.
+    </p>
+    <code><pre>class Add:
+    @staticmethod
+    def add(num1, num2):
+        add_res = num1 + num2
+        return add_res
+        return add_res
+</pre>
+    </code>
+
+    <p>
+        As we can see in the above example, the classes contain static method which close current functionalities for
+        modifications but new methods can be added to add features
+    </p>
+
+
 
     <h6 class="dodgerblue">Liskov Substitution Principle</h6>
     <p>
         Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type
         S where S is a subtype of T. This means that every subclass or derived class should be substitutable for their
         base or parent class.
+    </p>
+    <p>
+        You can understand it in a way that a farmer’s son should inherit farming skills from his father and should be
+        able to replace his father if needed. If the son wants to become a farmer then he can replace his father but if
+        he wants to become a cricketer then definitely the son can’t replace his father even though they both belong to
+        the same family hierarchy.
+    </p>
+    <p>
+        One of the classic examples of this principle is a rectangle having four sides. A rectangle’s height can be any
+        value and width can be any value. A square is a rectangle with equal width and height. So we can say that we can
+        extend the properties of the rectangle class into square class. In order to do that you need to swap the child
+        (square) class with parent (rectangle) class to fit the definition of a square having four equal sides but a
+        derived class does not affect the behavior of the parent class so if you will do that it will violate the Liskov
+        Substitution Principle.
+    </p>
+
+    <code><pre>from calculator.operations import Add, Sub, Mul, Div
+class Calculator:
+    """ The Base abstract class for calculation"""
+
+    num_list = []
+
+    def __init__(self, num_list):
+        """constructor for calculation class"""
+        self.num_list = num_list
+        self.values_list = Calculator.float_conversion(num_list)
+
+    @classmethod
+    def create(cls, num_list):
+        return cls(num_list)
+</pre>
+    </code>
+
+    <p>In the above example, we are using the child class to use the functionality of the parent class.
     </p>
 
     <h6 class="dodgerblue">Interface Segregation Principle</h6>
@@ -49,6 +126,18 @@
     <p>
         Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend
         on the low-level module, but they should depend on abstractions.
+    </p>
+    <p>
+        The Interface Segregation Principle (ISP) states that a client should not be exposed to methods it doesn't need.
+        Declaring methods in an interface that the client doesn't need pollutes the interface and leads to a “bulky” or
+        “fat” interface.
+    </p>
+    <p>
+        If a high module or class will be dependent more on low-level modules or class then your code would have tight
+        coupling and if you will try to make a change in one class it can break another class which is risky at the
+        production level. So always try to make classes loosely coupled as much as you can and you can achieve this
+        through abstraction. The main motive of this principle is decoupling the dependencies so if class A changes the
+        class B doesn’t need to care or know about the changes.
     </p>
 
     <h4>Design Patterns</h4>
